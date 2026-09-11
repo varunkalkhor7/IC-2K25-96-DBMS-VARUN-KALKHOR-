@@ -11,25 +11,29 @@ Use the CREATE TABLE command.
 Define the three required columns.
 Specify appropriate data types for each column.
 Execute the statement.
+
 SQL Query
 CREATE TABLE countries (
     country_id VARCHAR(2),
     country_name VARCHAR(40),
     region_id DECIMAL(10,0)
 );
+
 Time Complexity
 O(1) — Creating the table is a constant-time DDL operation from the user's perspective.
 Space Complexity
 O(1) initially, excluding storage required for future table data.
+
 Sample Input
 CREATE TABLE countries (
     country_id VARCHAR(2),
     country_name VARCHAR(40),
     region_id DECIMAL(10,0)
 );
+
 Sample Output
 Query OK, 0 rows affected
-Screenshot
+
 Learning Outcome
 Learned how to create a basic table using CREATE TABLE.
 Learned how to define columns and their data types.
@@ -37,26 +41,30 @@ Learned how to define columns and their data types.
 
 Program 2
 Problem Statement
-Write a SQL statement to create a simple table countries including country_id, country_name and region_id, which already exists. �
-assignment-1.docx
+Write a SQL statement to create a simple table countries including country_id, country_name and region_id, which already exists. 
+
 Approach / Algorithm
 Use CREATE TABLE IF NOT EXISTS so that MySQL creates the table only when it does not already exist.
+
 SQL Query
 CREATE TABLE IF NOT EXISTS countries (
     country_id VARCHAR(2),
     country_name VARCHAR(40),
     region_id DECIMAL(10,0)
 );
+
 Time Complexity
 O(1) for the DDL operation.
 Space Complexity
 O(1) initially.
+
 Sample Input
 CREATE TABLE IF NOT EXISTS countries (
     country_id VARCHAR(2),
     country_name VARCHAR(40),
     region_id DECIMAL(10,0)
 );
+
 Sample Output
 Query OK, 0 rows affected.
 Learning Outcome
@@ -67,22 +75,27 @@ Learned how to avoid an error when a table already exists.
 
 Program 3
 Problem Statement
-Write a SQL statement to create the structure of a table dup_countries similar to countries. �
-assignment-1.docx
+Write a SQL statement to create the structure of a table dup_countries similar to countries.
+
 Approach / Algorithm
 Use the MySQL LIKE clause to copy the structure of the existing countries table.
+
 SQL Query
 CREATE TABLE dup_countries
 LIKE countries;
+
 Time Complexity
 O(1) for the table-definition operation.
 Space Complexity
 O(1) with respect to row data because only the structure is copied.
+
 Sample Input
 CREATE TABLE dup_countries
 LIKE countries;
+
 Sample Output
 Query OK, 0 rows affected
+
 Learning Outcome
 Learned how to copy an existing table's structure.
 Learned the use of CREATE TABLE ... LIKE.
