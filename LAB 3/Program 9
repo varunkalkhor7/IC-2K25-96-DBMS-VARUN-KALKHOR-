@@ -1,0 +1,5 @@
+Question 9 Write a query to get the number of employees working with the company.
+
+SELECT 
+    COUNT(*) AS no_of_employees 
+FROM employees;
