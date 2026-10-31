@@ -1,0 +1,13 @@
+Q20. Use ON DELETE NO ACTION and ON UPDATE NO ACTION
+CREATE TABLE employees (
+    employee_id INT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(25),
+    job_id INT,
+    salary DECIMAL(8,2),
+    CONSTRAINT fk_emp_job
+    FOREIGN KEY (job_id)
+    REFERENCES jobs(job_id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE=InnoDB;
