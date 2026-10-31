@@ -1,0 +1,6 @@
+Q9. Apply UNIQUE Constraint on Country ID
+CREATE TABLE countries (
+    country_id VARCHAR(2) UNIQUE,
+    country_name VARCHAR(40),
+    region_id DECIMAL(10,0)
+);
