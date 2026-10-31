@@ -1,6 +1,0 @@
-Q5. Display the first name of all employees whose first name contains both the letters 'b' and 'c'.
-SQL Query:
-SELECT first_name
-FROM employees
-WHERE first_name LIKE '%b%'
-AND first_name LIKE '%c%';
