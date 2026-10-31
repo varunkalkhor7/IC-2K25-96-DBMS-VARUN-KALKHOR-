@@ -1,0 +1,5 @@
+Question 10
+ Write a query to display the name (first_name, last_name), salary and PF (15% of salary) of all employees.
+
+SELECT first_name, last_name, salary, salary * 0.15 AS PF 
+FROM employees;
