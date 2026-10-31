@@ -1,0 +1,5 @@
+Q4. Display the first name, last name, and hire date of all employees who were hired in the year 1987.
+SQL Query:
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE YEAR(hire_date) = 1987;
