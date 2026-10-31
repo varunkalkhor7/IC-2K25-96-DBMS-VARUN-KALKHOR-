@@ -1,0 +1,11 @@
+Q14. Apply UNIQUE and FOREIGN KEY Constraints
+CREATE TABLE job_history (
+    employee_id INT NOT NULL UNIQUE,
+    start_date DATE,
+    end_date DATE,
+    job_id VARCHAR(10),
+    department_id INT,
+    CONSTRAINT fk_history_jobs
+    FOREIGN KEY (job_id)
+    REFERENCES jobs(job_id)
+) ENGINE=InnoDB;
