@@ -1,0 +1,60 @@
+QUESTION 01 Create a simple countries table 
+CREATE TABLE countries ( country_id VARCHAR(2), country_name VARCHAR(40), region_id DECIMAL(10,0) );
+
+QUESTION 02 Create countries only if it does not exist 
+CREATE TABLE IF NOT EXISTS countries ( country_id VARCHAR(2), country_name VARCHAR(40), region_id DECIMAL(10,0) );
+
+QUESTION 03 Copy the structure of countries 
+CREATE TABLE dup_countries LIKE countries;
+
+QUESTION 04 Copy countries structure and data 
+CREATE TABLE dup_countries AS SELECT * FROM countries;
+
+QUESTION 05 Create countries with nullable columns 
+CREATE TABLE countries ( country_id VARCHAR(2) NULL, country_name VARCHAR(40) NULL, region_id DECIMAL(10,0) NULL );
+
+QUESTION 06 Check maximum salary limit 
+CREATE TABLE jobs ( job_id INT, job_title VARCHAR(35), min_salary DECIMAL(6,0), max_salary DECIMAL(6,0), CONSTRAINT chk_max_salary CHECK (max_salary <= 25000) );
+
+QUESTION 07 Allow only Italy, India and China 
+CREATE TABLE countries ( country_id VARCHAR(2), country_name VARCHAR(40), region_id DECIMAL(10,0), CONSTRAINT chk_country_name CHECK (country_name IN ('Italy', 'India', 'China')) );
+
+QUESTION 08 Create job_history with date column 
+CREATE TABLE job_history ( employee_id INT, start_date DATE, end_date DATE, job_id VARCHAR(10), department_id INT );
+
+QUESTION 09 Unique country_id 
+CREATE TABLE countries ( country_id VARCHAR(2) UNIQUE, country_name VARCHAR(40), region_id DECIMAL(10,0) );
+
+QUESTION 10 Set default values 
+CREATE TABLE jobs ( job_id INT, job_title VARCHAR(35) NOT NULL DEFAULT '', min_salary DECIMAL(6,0) DEFAULT 8000, max_salary DECIMAL(6,0) DEFAULT NULL );
+
+QUESTION 11 Country ID as primary key 
+CREATE TABLE countries ( country_id VARCHAR(2) PRIMARY KEY, country_name VARCHAR(40), region_id DECIMAL(10,0) );
+
+QUESTION 12 Auto increment country ID 
+CREATE TABLE countries ( country_id INT AUTO_INCREMENT UNIQUE, country_name VARCHAR(40), region_id DECIMAL(10,0) );
+
+QUESTION 13 Composite unique constraint 
+CREATE TABLE countries ( country_id VARCHAR(2), country_name VARCHAR(40), region_id DECIMAL(10,0), UNIQUE (country_id, region_id) );
+
+QUESTION 14 Unique employee and jobs foreign key 
+CREATE TABLE job_history ( employee_id INT NOT NULL UNIQUE, start_date DATE, end_date DATE, job_id VARCHAR(10), department_id INT, CONSTRAINT fk_history_jobs FOREIGN KEY (job_id) REFERENCES jobs(job_id) ) ENGINE=InnoDB;
+
+QUESTION 15 Composite foreign key 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), email VARCHAR(25), phone_number VARCHAR(20), hire_date DATE, job_id VARCHAR(10), salary DECIMAL(8,2), commission DECIMAL(4,2), manager_id DECIMAL(6,0), department_id DECIMAL(4,0), CONSTRAINT fk_employee_department_manager FOREIGN KEY (department_id, manager_id) REFERENCES departments(department_id, manager_id) ) ENGINE=InnoDB;
+
+QUESTION 16 Two foreign key constraints 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), email VARCHAR(25), phone_number VARCHAR(20), hire_date DATE, job_id VARCHAR(10), salary DECIMAL(8,2), commission DECIMAL(4,2), manager_id DECIMAL(6,0), department_id DECIMAL(4,0), CONSTRAINT fk_emp_department FOREIGN KEY (department_id) REFERENCES departments(department_id), CONSTRAINT fk_emp_job FOREIGN KEY (job_id) REFERENCES jobs(job_id) ) ENGINE=InnoDB;
+
+QUESTION 17 ON UPDATE CASCADE and ON DELETE RESTRICT 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), job_id INT, salary DECIMAL(8,2), CONSTRAINT fk_emp_job FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON UPDATE CASCADE ON DELETE RESTRICT ) ENGINE=InnoDB;
+
+QUESTION 18 ON DELETE CASCADE and ON UPDATE RESTRICT 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), job_id INT, salary DECIMAL(8,2), CONSTRAINT fk_emp_job FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE ON UPDATE RESTRICT ) ENGINE=InnoDB;
+
+QUESTION 19 ON DELETE SET NULL and ON UPDATE SET NULL 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), job_id INT NULL, salary DECIMAL(8,2), CONSTRAINT fk_emp_job FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE SET NULL ON UPDATE SET NULL ) ENGINE=InnoDB;
+
+QUESTION 20 ON DELETE NO ACTION and ON UPDATE NO ACTION 
+CREATE TABLE employees ( employee_id INT NOT NULL PRIMARY KEY, first_name VARCHAR(20), last_name VARCHAR(25), job_id INT, salary DECIMAL(8,2), CONSTRAINT fk_emp_job FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE NO ACTION ON UPDATE NO ACTION ) ENGINE=InnoDB;
+
