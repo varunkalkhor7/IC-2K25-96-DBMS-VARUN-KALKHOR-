@@ -1,0 +1,9 @@
+Q6. Apply CHECK Constraint on Maximum Salary
+CREATE TABLE jobs (
+    job_id INT,
+    job_title VARCHAR(35),
+    min_salary DECIMAL(6,0),
+    max_salary DECIMAL(6,0),
+    CONSTRAINT chk_max_salary
+    CHECK (max_salary <= 25000)
+);
