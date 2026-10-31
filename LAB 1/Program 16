@@ -1,0 +1,20 @@
+Q16. Create Two FOREIGN KEY Constraints
+CREATE TABLE employees (
+    employee_id INT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(25),
+    email VARCHAR(25),
+    phone_number VARCHAR(20),
+    hire_date DATE,
+    job_id VARCHAR(10),
+    salary DECIMAL(8,2),
+    commission DECIMAL(4,2),
+    manager_id DECIMAL(6,0),
+    department_id DECIMAL(4,0),
+    CONSTRAINT fk_emp_department
+    FOREIGN KEY (department_id)
+    REFERENCES departments(department_id),
+    CONSTRAINT fk_emp_job
+    FOREIGN KEY (job_id)
+    REFERENCES jobs(job_id)
+) ENGINE=InnoDB;
