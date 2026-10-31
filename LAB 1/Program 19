@@ -1,0 +1,13 @@
+Q19. Use ON DELETE SET NULL and ON UPDATE SET NULL
+CREATE TABLE employees (
+    employee_id INT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(25),
+    job_id INT NULL,
+    salary DECIMAL(8,2),
+    CONSTRAINT fk_emp_job
+    FOREIGN KEY (job_id)
+    REFERENCES jobs(job_id)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL
+) ENGINE=InnoDB;
