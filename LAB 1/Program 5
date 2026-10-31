@@ -1,0 +1,6 @@
+Q5. Create Countries Table with Nullable Columns
+CREATE TABLE countries (
+    country_id VARCHAR(2) NULL,
+    country_name VARCHAR(40) NULL,
+    region_id DECIMAL(10,0) NULL
+);
