@@ -1,0 +1,6 @@
+Q12. Create AUTO_INCREMENT Country ID
+CREATE TABLE countries (
+    country_id INT AUTO_INCREMENT UNIQUE,
+    country_name VARCHAR(40),
+    region_id DECIMAL(10,0)
+);
