@@ -1,0 +1,2 @@
+Q3. Copy the Structure of Countries Table
+CREATE TABLE dup_countries LIKE countries;
