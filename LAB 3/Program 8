@@ -1,0 +1,6 @@
+Question 8 Write a query to get the average salary and number of employees in the employees table.
+
+SELECT 
+    AVG(salary) AS average_salary, 
+    COUNT(*) AS no_of_employees 
+FROM employees;
