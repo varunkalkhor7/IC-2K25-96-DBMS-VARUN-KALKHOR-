@@ -1,0 +1,6 @@
+Question. 4 Write a query to get the maximum salary of an employee working as a Programmer.
+
+SELECT 
+    MAX(salary) AS maximum_salary 
+FROM employees 
+WHERE job_id = 'IT_PROG';
