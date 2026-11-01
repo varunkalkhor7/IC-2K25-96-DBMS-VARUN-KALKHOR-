@@ -1,0 +1,12 @@
+Question. 13 Write a query to display department name, name (first_name, last_name), hire date, salary of the manager for all managers whose experience is more than 15 years.
+
+SELECT 
+    d.department_name, 
+    e.first_name, 
+    e.last_name, 
+    e.hire_date, 
+    e.salary 
+FROM departments d 
+JOIN employees e 
+    ON d.manager_id = e.employee_id 
+WHERE TIMESTAMPDIFF(YEAR, e.hire_date, CURDATE()) > 15;
