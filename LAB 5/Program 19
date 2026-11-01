@@ -1,0 +1,11 @@
+Question. 19 Write a query to list the department ID and name of all the departments where no employee is working.
+
+SELECT 
+    department_id, 
+    department_name 
+FROM departments 
+WHERE department_id NOT IN (
+    SELECT department_id 
+    FROM employees 
+    WHERE department_id IS NOT NULL
+);
