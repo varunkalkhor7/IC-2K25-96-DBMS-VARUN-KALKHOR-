@@ -1,0 +1,7 @@
+Question. 17 Write a query to find the 4th minimum salary in the employees table.
+
+SELECT DISTINCT 
+    salary AS fourth_min_salary 
+FROM employees 
+ORDER BY salary ASC 
+LIMIT 1 OFFSET 3;
