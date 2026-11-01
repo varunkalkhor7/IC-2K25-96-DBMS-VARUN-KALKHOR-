@@ -1,0 +1,10 @@
+Question. 2 Write a query to find the name (first_name, last name), department ID and name of all the employees.
+
+SELECT 
+    e.first_name, 
+    e.last_name, 
+    e.department_id, 
+    d.department_name 
+FROM employees e 
+LEFT JOIN departments d 
+    ON e.department_id = d.department_id;
