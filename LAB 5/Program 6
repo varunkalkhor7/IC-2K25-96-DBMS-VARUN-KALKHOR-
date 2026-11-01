@@ -1,0 +1,12 @@
+Question. 6 Write a query to find the name (first_name, last_name), and salary of the employees whose salary is equal to the minimum salary for their job grade.
+
+SELECT 
+    first_name, 
+    last_name, 
+    salary 
+FROM employees 
+WHERE salary = (
+    SELECT min_salary 
+    FROM jobs 
+    WHERE jobs.job_id = employees.job_id
+);
