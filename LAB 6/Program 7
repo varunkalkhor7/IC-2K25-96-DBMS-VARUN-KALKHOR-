@@ -1,0 +1,10 @@
+Question. 7 Write a query to find the employee ID, job title, number of days between ending date and starting date for all jobs in department 90.
+
+SELECT 
+    h.employee_id, 
+    j.job_title, 
+    DATEDIFF(h.end_date, h.start_date) AS no_of_days 
+FROM job_history h 
+JOIN jobs j 
+    ON h.job_id = j.job_id 
+WHERE h.department_id = 90;
