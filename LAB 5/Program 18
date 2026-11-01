@@ -1,0 +1,8 @@
+Question. 18 Write a query to select last 10 records from a table.
+
+SELECT * FROM (
+    SELECT *  FROM employees 
+    ORDER BY employee_id DESC 
+    LIMIT 10
+) t 
+ORDER BY employee_id ASC;
