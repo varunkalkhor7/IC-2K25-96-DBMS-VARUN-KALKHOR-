@@ -1,0 +1,9 @@
+Question. 12 Write a query to display the job history that were done by any employee who is currently drawing more than 10000 of salary.
+
+SELECT * 
+FROM job_history 
+WHERE employee_id IN (
+    SELECT employee_id 
+    FROM employees 
+    WHERE salary > 10000
+);
