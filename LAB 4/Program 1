@@ -1,0 +1,5 @@
+Question. 1 Write a query to list the number of jobs available in the employees table.
+
+SELECT 
+    COUNT(DISTINCT job_id) AS no_of_jobs 
+FROM employees;
