@@ -1,0 +1,7 @@
+Question. 7 Write a query to get the number of employees with the same job.
+
+SELECT 
+    job_id, 
+    COUNT(*) AS no_of_employees 
+FROM employees 
+GROUP BY job_id;
