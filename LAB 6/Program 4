@@ -1,0 +1,10 @@
+Question. 4 Write a query to find the employee id, name (last_name) along with their manager_id and name (last_name).
+
+SELECT 
+    e.employee_id, 
+    e.last_name, 
+    e.manager_id, 
+    m.last_name AS manager_last_name 
+FROM employees e 
+LEFT JOIN employees m 
+    ON e.manager_id = m.employee_id;
