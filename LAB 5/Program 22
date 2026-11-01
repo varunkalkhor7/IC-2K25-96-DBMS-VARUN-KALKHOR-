@@ -1,0 +1,10 @@
+Question. 22 Write a query to get nth max salaries of employees.
+
+SELECT DISTINCT 
+    salary 
+FROM employees e1 
+WHERE 3 = (
+    SELECT COUNT(DISTINCT salary) 
+    FROM employees e2 
+    WHERE e2.salary >= e1.salary
+);
