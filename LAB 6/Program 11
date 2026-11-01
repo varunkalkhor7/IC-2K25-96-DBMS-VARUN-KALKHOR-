@@ -1,0 +1,9 @@
+Question. 11 Write a query to display job title, employee name, and the difference between salary of the employee and minimum salary for the job.
+
+SELECT 
+    j.job_title, 
+    CONCAT(e.first_name, ' ', e.last_name) AS employee_name, 
+    e.salary - j.min_salary AS salary_difference 
+FROM employees e 
+JOIN jobs j 
+    ON e.job_id = j.job_id;
