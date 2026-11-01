@@ -1,0 +1,9 @@
+Question. 10 Write a query to display the job title and average salary of employees.
+
+SELECT 
+    j.job_title, 
+    AVG(e.salary) AS average_salary 
+FROM employees e 
+JOIN jobs j 
+    ON e.job_id = j.job_id 
+GROUP BY j.job_title;
