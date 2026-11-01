@@ -13,3 +13,6 @@ A collection of SQL queries, table schemas, and CLI outputs from my Database Man
 ├── Lab 4/   # Data Aggregation & Grouping (GROUP BY, HAVING, COUNT, SUM, AVG)
 ├── Lab 5/   # Subqueries & Nested Logic (Single-row, Multi-row, Correlated)
 └── Lab 6/   # Joins & Multi-table Queries (INNER, LEFT, NATURAL, Self Joins)
+
+Author- Varun Kalkhor
+Roll NO.- IC-2K25-96
