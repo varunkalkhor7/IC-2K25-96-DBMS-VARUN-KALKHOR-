@@ -1,0 +1,9 @@
+Question. 8 Write a query to display the department ID and name and first name of manager.
+
+SELECT 
+    d.department_id, 
+    d.department_name, 
+    e.first_name AS manager_first_name 
+FROM departments d 
+JOIN employees e 
+    ON d.manager_id = e.employee_id;
